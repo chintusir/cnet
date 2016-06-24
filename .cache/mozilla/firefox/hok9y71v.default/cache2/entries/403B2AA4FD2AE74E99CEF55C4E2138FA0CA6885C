@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"20c4a8c482","applicationID":"454369","transactionName":"dl5cQkcLXF9XRBoBW1YeX1db","queueTime":5,"applicationTime":305,"ttGuid":"","agentToken":null,"agent":""}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(e,n){return function(){o(e,[(new Date).getTime()].concat(a(arguments)),null,n)}}var o=e("handle"),i=e(2),a=e(3);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var c=["setPageViewName","setCustomAttribute","finished","addToTrace","inlineHit"],u=["addPageAction"],f="api-";i(c,function(e,n){newrelic[n]=r(f+n,"api")}),i(u,function(e,n){newrelic[n]=r(f+n)}),n.exports=newrelic,newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),o("err",[e,(new Date).getTime()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(0>o?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?c(e,a,i):i()}function t(t,r,o){e&&e(t,r,o);for(var i=n(o),a=l(t),c=a.length,u=0;c>u;u++)a[u].apply(i,r);var s=f[m[t]];return s&&s.push([w,t,r,i]),i}function p(e,n){g[e]=l(e).concat(n)}function l(e){return g[e]||[]}function d(e){return s[e]=s[e]||o(t)}function v(e,n){u(e,function(e,t){n=n||"feature",m[t]=n,n in f||(f[n]=[])})}var g={},m={},w={on:p,emit:t,get:d,listeners:l,context:n,buffer:v};return w}function i(){return new r}var a="nr@context",c=e("gos"),u=e(2),f={},s={},p=n.exports=o();p.backlog=f},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!b++){var e=y.info=NREUM.info,n=s.getElementsByTagName("script")[0];if(e&&e.licenseKey&&e.applicationID&&n){u(m,function(n,t){e[n]||(e[n]=t)});var t="https"===g.split(":")[0]||e.sslForHttp;y.proto=t?"https://":"http://",c("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+e.agent,n.parentNode.insertBefore(r,n)}}}function o(){"complete"===s.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=e("handle"),u=e(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},e(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-952.min.js"},w=d&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),y=n.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader"]);</script>
+
+  <title>Git - git-clone Documentation</title>
+
+  <link href='/favicon.ico' rel='shortcut icon' type='image/x-icon'>
+  <link rel="alternate" href="/blog.rss" type="application/rss+xml" title="Git - Blog">
+
+  <link rel="stylesheet" media="screen" href="/assets/git-scm-65ca8280a031499ee9e8e2b10c8a596c.css" />
+  <script src="/assets/modernizr-10d8d48497292341fc1c4a63d06c6f61.js"></script>
+<script src="/assets/modernizr-tests-0e26a9afd9c6455a99b7b4165485c366.js"></script>
+  <!--[if (gte IE 6)&(lte IE 8)]>
+  <script src="/javascripts/selectivizr-min.js"></script>
+  <![endif]-->
+
+  <script src="https://use.typekit.com/jsq2fql.js" type="text/javascript"></script>
+  <script>
+    //<![CDATA[
+      try{Typekit.load();}catch(e){}
+    //]]>
+  </script>
+
+</head>
+
+<body id="documentation">
+
+  <div class="inner">
+    <header>
+
+  <a href="/"><img src="/images/logo@2x.png" width="110" height="46" alt="Git" /></a>
+  <span id="tagline">
+    <em>--</em>distributed-even-if-your-workflow-isnt
+  </span>
+
+  <form id="search" action="/search/results">
+    <input id="search-text" name="search" placeholder="Search entire site..." autocomplete="off" type="text" />
+  </form>
+  <div id="search-results"></div>
+
+</header>
+
+  </div> <!-- .inner -->
+
+    <div class="inner">
+      <div id="content-wrapper">
+        <aside class="sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a href="/about">About</a>
+      </li>
+      <li>
+        <a class="active" href="/doc">Documentation</a>
+        <ul class="expanded">
+          <li>
+            <a href="/docs">Reference</a>
+          </li>
+          <li>
+            <a href="/book">Book</a>
+          </li>
+          <li>
+            <a href="/videos">Videos</a>
+          </li>
+          <li>
+            <a href="/doc/ext">External Links</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/blog">Blog</a>
+      </li>
+      <li>
+        <a href="/downloads">Downloads</a>
+        <ul class="">
+          <li>
+            <a href="/downloads/guis">GUI Clients</a>
+          </li>
+          <li>
+            <a href="/downloads/logos">Logos</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="/community">Community</a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+        <div id="content">
+          
+
+  <div id='reference-version'>
+    <a class="dropdown-trigger" id="reference-topics-trigger" data-panel-id="topics-dropdown" href="#">Topics ‚ñæ</a>
+<div class='dropdown-panel right' id='topics-dropdown'>
+  <div class='three-column'>
+    <div class='column-left'>
+      <h3 class='setup'>Setup and Config</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-config">config</a></li>
+  <li><a href="/docs/git-help">help</a></li>
+</ul>
+
+      <h3 class='projects'>Getting and Creating Projects</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-init">init</a></li>
+  <li><a href="/docs/git-clone">clone</a></li>
+</ul>
+
+      <h3 class='snapshotting'>Basic Snapshotting</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-add">add</a></li>
+  <li><a href="/docs/git-status">status</a></li>
+  <li><a href="/docs/git-diff">diff</a></li>
+  <li><a href="/docs/git-commit">commit</a></li>
+  <li><a href="/docs/git-reset">reset</a></li>
+  <li><a href="/docs/git-rm">rm</a></li>
+  <li><a href="/docs/git-mv">mv</a></li>
+</ul>
+
+      <h3 class='branching'>Branching and Merging</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-branch">branch</a></li>
+  <li><a href="/docs/git-checkout">checkout</a></li>
+  <li><a href="/docs/git-merge">merge</a></li>
+  <li><a href="/docs/git-mergetool">mergetool</a></li>
+  <li><a href="/docs/git-log">log</a></li>
+  <li><a href="/docs/git-stash">stash</a></li>
+  <li><a href="/docs/git-tag">tag</a></li>
+</ul>
+
+      <h3 class='sharing'>Sharing and Updating Projects</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-fetch">fetch</a></li>
+  <li><a href="/docs/git-pull">pull</a></li>
+  <li><a href="/docs/git-push">push</a></li>
+  <li><a href="/docs/git-remote">remote</a></li>
+  <li><a href="/docs/git-submodule">submodule</a></li>
+</ul>
+
+    </div>
+    <div class='column-middle'>
+      <h3 class='inspection'>Inspection and Comparison</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-show">show</a></li>
+  <li><a href="/docs/git-log">log</a></li>
+  <li><a href="/docs/git-diff">diff</a></li>
+  <li><a href="/docs/git-shortlog">shortlog</a></li>
+  <li><a href="/docs/git-describe">describe</a></li>
+</ul>
+
+      <h3 class='patching'>Patching</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-apply">apply</a></li>
+  <li><a href="/docs/git-cherry-pick">cherry-pick</a></li>
+  <li><a href="/docs/git-diff">diff</a></li>
+  <li><a href="/docs/git-rebase">rebase</a></li>
+  <li><a href="/docs/git-revert">revert</a></li>
+</ul>
+
+      <h3 class='debugging'>Debugging</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-bisect">bisect</a></li>
+  <li><a href="/docs/git-blame">blame</a></li>
+  <li><a href="/docs/git-grep">grep</a></li>
+</ul>
+
+      <h3 class='email'>Email</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-am">am</a></li>
+  <li><a href="/docs/git-apply">apply</a></li>
+  <li><a href="/docs/git-format-patch">format-patch</a></li>
+  <li><a href="/docs/git-send-email">send-email</a></li>
+  <li><a href="/docs/git-request-pull">request-pull</a></li>
+</ul>
+
+      <h3 class='external'>External Systems</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-svn">svn</a></li>
+  <li><a href="/docs/git-fast-import">fast-import</a></li>
+</ul>
+
+    </div>
+    <div class='column-right'>
+      <h3 class='admin'>Administration</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-clean">clean</a></li>
+  <li><a href="/docs/git-gc">gc</a></li>
+  <li><a href="/docs/git-fsck">fsck</a></li>
+  <li><a href="/docs/git-reflog">reflog</a></li>
+  <li><a href="/docs/git-filter-branch">filter-branch</a></li>
+  <li><a href="/docs/git-instaweb">instaweb</a></li>
+  <li><a href="/docs/git-archive">archive</a></li>
+  <li><a href="/docs/git-bundle">bundle</a></li>
+</ul>
+
+      <h3 class='server-admin'>Server Admin</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-daemon">daemon</a></li>
+  <li><a href="/docs/git-update-server-info">update-server-info</a></li>
+</ul>
+
+      <h3 class='plumbing'>Plumbing Commands</h3>
+<ul class='unstyled'>
+  <li><a href="/docs/git-cat-file">cat-file</a></li>
+  <li><a href="/docs/git-commit-tree">commit-tree</a></li>
+  <li><a href="/docs/git-count-objects">count-objects</a></li>
+  <li><a href="/docs/git-diff-index">diff-index</a></li>
+  <li><a href="/docs/git-for-each-ref">for-each-ref</a></li>
+  <li><a href="/docs/git-hash-object">hash-object</a></li>
+  <li><a href="/docs/git-ls-files">ls-files</a></li>
+  <li><a href="/docs/git-merge-base">merge-base</a></li>
+  <li><a href="/docs/git-read-tree">read-tree</a></li>
+  <li><a href="/docs/git-rev-list">rev-list</a></li>
+  <li><a href="/docs/git-rev-parse">rev-parse</a></li>
+  <li><a href="/docs/git-show-ref">show-ref</a></li>
+  <li><a href="/docs/git-symbolic-ref">symbolic-ref</a></li>
+  <li><a href="/docs/git-update-index">update-index</a></li>
+  <li><a href="/docs/git-update-ref">update-ref</a></li>
+  <li><a href="/docs/git-verify-pack">verify-pack</a></li>
+  <li><a href="/docs/git-write-tree">write-tree</a></li>
+</ul>
+
+    </div>
+  </div>
+</div>
+
+    <a class="dropdown-trigger" id="reference-versions-trigger" data-panel-id="previous-versions-dropdown" href="#">Version 2.9.0 ‚ñæ</a>
+<span class="light">git-clone last updated in 2.9.0</span>
+<div class='dropdown-panel left' id='previous-versions-dropdown'>
+  <header>Changes in the <strong>git-clone</strong> manual</header>
+  <ol class='reference-previous-versions'>
+        <li>
+        <a href="/docs/git-clone/2.9.0"><span class="version">2.9.0</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">06/13/16</em>
+        </a>
+        </li>
+        <li class="no-change"><span>2.8.1 &rarr; 2.8.4 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/2.8.0"><span class="version">2.8.0</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">03/28/16</em>
+        </a>
+        </li>
+        <li class="no-change"><span>2.7.2 &rarr; 2.7.4 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/2.7.1"><span class="version">2.7.1</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">02/05/16</em>
+        </a>
+        </li>
+        <li>
+        <a href="/docs/git-clone/2.7.0"><span class="version">2.7.0</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+          </span>
+          <em class="date">01/04/16</em>
+        </a>
+        </li>
+        <li class="no-change"><span>2.5.2 &rarr; 2.6.6 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/2.5.1"><span class="version">2.5.1</span>
+          <span class="diff">
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">08/28/15</em>
+        </a>
+        </li>
+        <li>
+        <a href="/docs/git-clone/2.5.0"><span class="version">2.5.0</span>
+          <span class="diff">
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">07/27/15</em>
+        </a>
+        </li>
+        <li class="no-change"><span>2.4.10 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/2.4.9"><span class="version">2.4.9</span>
+          <span class="diff">
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">09/04/15</em>
+        </a>
+        </li>
+        <li class="no-change"><span>2.4.1 &rarr; 2.4.8 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/2.4.0"><span class="version">2.4.0</span>
+          <span class="diff">
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">04/30/15</em>
+        </a>
+        </li>
+        <li>
+        <a href="/docs/git-clone/2.3.9"><span class="version">2.3.9</span>
+          <span class="diff">
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">09/04/15</em>
+        </a>
+        </li>
+        <li class="no-change"><span>2.3.1 &rarr; 2.3.8 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/2.3.0"><span class="version">2.3.0</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">02/05/15</em>
+        </a>
+        </li>
+        <li class="no-change"><span>2.0.1 &rarr; 2.2.2 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/2.0.0"><span class="version">2.0.0</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">05/28/14</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.9.1 &rarr; 1.9.5 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.9.0"><span class="version">1.9.0</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">02/14/14</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.5.4 &rarr; 1.8.5.5 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.8.5.3"><span class="version">1.8.5.3</span>
+          <span class="diff">
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">01/13/14</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.4.1 &rarr; 1.8.5.2 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.8.4"><span class="version">1.8.4</span>
+          <span class="diff">
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">08/23/13</em>
+        </a>
+        </li>
+        <li>
+        <a href="/docs/git-clone/1.8.3.4"><span class="version">1.8.3.4</span>
+          <span class="diff">
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">07/22/13</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.3.3 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.8.3.2"><span class="version">1.8.3.2</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">06/28/13</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.3.1 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.8.3"><span class="version">1.8.3</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">05/24/13</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.2.1 &rarr; 1.8.2.3 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.8.2"><span class="version">1.8.2</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">03/13/13</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.1.6 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.8.1.5"><span class="version">1.8.1.5</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">03/01/13</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.0.2 &rarr; 1.8.1.4 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.8.0.1"><span class="version">1.8.0.1</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">11/26/12</em>
+        </a>
+        </li>
+        <li class="no-change"><span>1.8.0 no changes</span></li>
+        <li>
+        <a href="/docs/git-clone/1.7.12.4"><span class="version">1.7.12.4</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+          </span>
+          <em class="date">10/17/12</em>
+        </a>
+        </li>
+        <li>
+        <a href="/docs/git-clone/1.7.12.3"><span class="version">1.7.12.3</span>
+          <span class="diff">
+              <img src="/images/icons/green-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/red-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+              <img src="/images/icons/grey-dot.png" />
+          </span>
+          <em class="date">10/08/12</em>
+        </a>
+        </li>
+    <li>&nbsp;</li>
+    <!-- <li><a class="more" href="#">See more previous releases ‚Üí</a></li> -->
+  </ol>
+  <footer>
+    <span class="light">Check your version of git by running<br></span>
+    <strong>$</strong>
+    <input type="text" class="copyable" value="git --version" />
+  </footer>
+</div>
+
+  </div>
+
+  <div id='main'>
+    <div class="sect1">
+  <h2 id="_name">NAME</h2>
+  
+    <div class="sectionbody"><div class="paragraph">
+<p>git-clone - Clone a repository into a new directory</p>
+</div></div>
+  
+</div>
+<div class="sect1">
+  <h2 id="_synopsis">SYNOPSIS</h2>
+  
+    <div class="sectionbody"><div class="verseblock">
+<pre class="content"><em>git clone</em> [--template=&lt;template_directory&gt;]
+	  [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
+	  [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference &lt;repository&gt;]
+	  [--dissociate] [--separate-git-dir &lt;git dir&gt;]
+	  [--depth &lt;depth&gt;] [--[no-]single-branch]
+	  [--recursive | --recurse-submodules] [--[no-]shallow-submodules]
+	  [--jobs &lt;n&gt;] [--] &lt;repository&gt; [&lt;directory&gt;]</pre>
+</div></div>
+  
+</div>
+<div class="sect1">
+  <h2 id="_description">DESCRIPTION</h2>
+  
+    <div class="sectionbody"><div class="paragraph">
+<p>Clones a repository into a newly created directory, creates
+remote-tracking branches for each branch in the cloned repository
+(visible using <code>git branch -r</code>), and creates and checks out an
+initial branch that is forked from the cloned repository&#8217;s
+currently active branch.</p>
+</div>
+<div class="paragraph">
+<p>After the clone, a plain <code>git fetch</code> without arguments will update
+all the remote-tracking branches, and a <code>git pull</code> without
+arguments will in addition merge the remote master branch into the
+current master branch, if any (this is untrue when "--single-branch"
+is given; see below).</p>
+</div>
+<div class="paragraph">
+<p>This default configuration is achieved by creating references to
+the remote branch heads under <code>refs/remotes/origin</code> and
+by initializing <code>remote.origin.url</code> and <code>remote.origin.fetch</code>
+configuration variables.</p>
+</div></div>
+  
+</div>
+<div class="sect1">
+  <h2 id="_options">OPTIONS</h2>
+  
+    <div class="sectionbody"><div class="dlist">
+<dl>
+<dt class="hdlist1">--local</dt>
+<dt class="hdlist1">-l</dt>
+<dd>
+<p>When the repository to clone from is on a local machine,
+this flag bypasses the normal "Git aware" transport
+mechanism and clones the repository by making a copy of
+HEAD and everything under objects and refs directories.
+The files under <code>.git/objects/</code> directory are hardlinked
+to save space when possible.</p>
+<div class="paragraph">
+<p>If the repository is specified as a local path (e.g., <code>/path/to/repo</code>),
+this is the default, and --local is essentially a no-op.  If the
+repository is specified as a URL, then this flag is ignored (and we
+never use the local optimizations).  Specifying <code>--no-local</code> will
+override the default when <code>/path/to/repo</code> is given, using the regular
+Git transport instead.</p>
+</div>
+</dd>
+<dt class="hdlist1">--no-hardlinks</dt>
+<dd>
+<p>Force the cloning process from a repository on a local
+filesystem to copy the files under the <code>.git/objects</code>
+directory instead of using hardlinks. This may be desirable
+if you are trying to make a back-up of your repository.</p>
+</dd>
+<dt class="hdlist1">--shared</dt>
+<dt class="hdlist1">-s</dt>
+<dd>
+<p>When the repository to clone is on the local machine,
+instead of using hard links, automatically setup
+<code>.git/objects/info/alternates</code> to share the objects
+with the source repository.  The resulting repository
+starts out without any object of its own.</p>
+<div class="paragraph">
+<p><strong>NOTE</strong>: this is a possibly dangerous operation; do <strong>not</strong> use
+it unless you understand what it does. If you clone your
+repository using this option and then delete branches (or use any
+other Git command that makes any existing commit unreferenced) in the
+source repository, some objects may become unreferenced (or dangling).
+These objects may be removed by normal Git operations (such as <code>git commit</code>)
+which automatically call <code>git gc --auto</code>. (See <a href='/docs/git-gc'>git-gc[1]</a>.)
+If these objects are removed and were referenced by the cloned repository,
+then the cloned repository will become corrupt.</p>
+</div>
+<div class="paragraph">
+<p>Note that running <code>git repack</code> without the <code>-l</code> option in a repository
+cloned with <code>-s</code> will copy objects from the source repository into a pack
+in the cloned repository, removing the disk space savings of <code>clone -s</code>.
+It is safe, however, to run <code>git gc</code>, which uses the <code>-l</code> option by
+default.</p>
+</div>
+<div class="paragraph">
+<p>If you want to break the dependency of a repository cloned with <code>-s</code> on
+its source repository, you can simply run <code>git repack -a</code> to copy all
+objects from the source repository into a pack in the cloned repository.</p>
+</div>
+</dd>
+<dt class="hdlist1">--reference &lt;repository&gt;</dt>
+<dd>
+<p>If the reference repository is on the local machine,
+automatically setup <code>.git/objects/info/alternates</code> to
+obtain objects from the reference repository.  Using
+an already existing repository as an alternate will
+require fewer objects to be copied from the repository
+being cloned, reducing network and local storage costs.</p>
+<div class="paragraph">
+<p><strong>NOTE</strong>: see the NOTE for the <code>--shared</code> option, and also the
+<code>--dissociate</code> option.</p>
+</div>
+</dd>
+<dt class="hdlist1">--dissociate</dt>
+<dd>
+<p>Borrow the objects from reference repositories specified
+with the <code>--reference</code> options only to reduce network
+transfer, and stop borrowing from them after a clone is made
+by making necessary local copies of borrowed objects.  This
+option can also be used when cloning locally from a
+repository that already borrows objects from another
+repository&#8212;&#8203;the new repository will borrow objects from the
+same repository, and this option can be used to stop the
+borrowing.</p>
+</dd>
+<dt class="hdlist1">--quiet</dt>
+<dt class="hdlist1">-q</dt>
+<dd>
+<p>Operate quietly.  Progress is not reported to the standard
+error stream.</p>
+</dd>
+<dt class="hdlist1">--verbose</dt>
+<dt class="hdlist1">-v</dt>
+<dd>
+<p>Run verbosely. Does not affect the reporting of progress status
+to the standard error stream.</p>
+</dd>
+<dt class="hdlist1">--progress</dt>
+<dd>
+<p>Progress status is reported on the standard error stream
+by default when it is attached to a terminal, unless -q
+is specified. This flag forces progress status even if the
+standard error stream is not directed to a terminal.</p>
+</dd>
+<dt class="hdlist1">--no-checkout</dt>
+<dt class="hdlist1">-n</dt>
+<dd>
+<p>No checkout of HEAD is performed after the clone is complete.</p>
+</dd>
+<dt class="hdlist1">--bare</dt>
+<dd>
+<p>Make a <em>bare</em> Git repository.  That is, instead of
+creating <code>&lt;directory&gt;</code> and placing the administrative
+files in <code>&lt;directory&gt;/.git</code>, make the <code>&lt;directory&gt;</code>
+itself the <code>$GIT_DIR</code>. This obviously implies the <code>-n</code>
+because there is nowhere to check out the working tree.
+Also the branch heads at the remote are copied directly
+to corresponding local branch heads, without mapping
+them to <code>refs/remotes/origin/</code>.  When this option is
+used, neither remote-tracking branches nor the related
+configuration variables are created.</p>
+</dd>
+<dt class="hdlist1">--mirror</dt>
+<dd>
+<p>Set up a mirror of the source repository.  This implies <code>--bare</code>.
+Compared to <code>--bare</code>, <code>--mirror</code> not only maps local branches of the
+source to local branches of the target, it maps all refs (including
+remote-tracking branches, notes etc.) and sets up a refspec configuration such
+that all these refs are overwritten by a <code>git remote update</code> in the
+target repository.</p>
+</dd>
+<dt class="hdlist1">--origin &lt;name&gt;</dt>
+<dt class="hdlist1">-o &lt;name&gt;</dt>
+<dd>
+<p>Instead of using the remote name <code>origin</code> to keep track
+of the upstream repository, use <code>&lt;name&gt;</code>.</p>
+</dd>
+<dt class="hdlist1">--branch &lt;name&gt;</dt>
+<dt class="hdlist1">-b &lt;name&gt;</dt>
+<dd>
+<p>Instead of pointing the newly created HEAD to the branch pointed
+to by the cloned repository&#8217;s HEAD, point to <code>&lt;name&gt;</code> branch
+instead. In a non-bare repository, this is the branch that will
+be checked out.
+<code>--branch</code> can also take tags and detaches the HEAD at that commit
+in the resulting repository.</p>
+</dd>
+<dt class="hdlist1">--upload-pack &lt;upload-pack&gt;</dt>
+<dt class="hdlist1">-u &lt;upload-pack&gt;</dt>
+<dd>
+<p>When given, and the repository to clone from is accessed
+via ssh, this specifies a non-default path for the command
+run on the other end.</p>
+</dd>
+<dt class="hdlist1">--template=&lt;template_directory&gt;</dt>
+<dd>
+<p>Specify the directory from which templates will be used;
+(See the "TEMPLATE DIRECTORY" section of <a href='/docs/git-init'>git-init[1]</a>.)</p>
+</dd>
+<dt class="hdlist1">--config &lt;key&gt;=&lt;value&gt;</dt>
+<dt class="hdlist1">-c &lt;key&gt;=&lt;value&gt;</dt>
+<dd>
+<p>Set a configuration variable in the newly-created repository;
+this takes effect immediately after the repository is
+initialized, but before the remote history is fetched or any
+files checked out.  The key is in the same format as expected by
+<a href='/docs/git-config'>git-config[1]</a> (e.g., <code>core.eol=true</code>). If multiple
+values are given for the same key, each value will be written to
+the config file. This makes it safe, for example, to add
+additional fetch refspecs to the origin remote.</p>
+</dd>
+<dt class="hdlist1">--depth &lt;depth&gt;</dt>
+<dd>
+<p>Create a <em>shallow</em> clone with a history truncated to the
+specified number of commits. Implies <code>--single-branch</code> unless
+<code>--no-single-branch</code> is given to fetch the histories near the
+tips of all branches. This implies <code>--shallow-submodules</code>. If
+you want to have a shallow superproject clone, but full submodules,
+also pass <code>--no-shallow-submodules</code>.</p>
+</dd>
+<dt class="hdlist1">--[no-]single-branch</dt>
+<dd>
+<p>Clone only the history leading to the tip of a single branch,
+either specified by the <code>--branch</code> option or the primary
+branch remote&#8217;s <code>HEAD</code> points at.
+Further fetches into the resulting repository will only update the
+remote-tracking branch for the branch this option was used for the
+initial cloning.  If the HEAD at the remote did not point at any
+branch when <code>--single-branch</code> clone was made, no remote-tracking
+branch is created.</p>
+</dd>
+<dt class="hdlist1">--recursive</dt>
+<dt class="hdlist1">--recurse-submodules</dt>
+<dd>
+<p>After the clone is created, initialize all submodules within,
+using their default settings. This is equivalent to running
+<code>git submodule update --init --recursive</code> immediately after
+the clone is finished. This option is ignored if the cloned
+repository does not have a worktree/checkout (i.e. if any of
+<code>--no-checkout</code>/<code>-n</code>, <code>--bare</code>, or <code>--mirror</code> is given)</p>
+</dd>
+<dt class="hdlist1">--[no-]shallow-submodules</dt>
+<dd>
+<p>All submodules which are cloned will be shallow with a depth of 1.</p>
+</dd>
+<dt class="hdlist1">--separate-git-dir=&lt;git dir&gt;</dt>
+<dd>
+<p>Instead of placing the cloned repository where it is supposed
+to be, place the cloned repository at the specified directory,
+then make a filesystem-agnostic Git symbolic link to there.
+The result is Git repository can be separated from working
+tree.</p>
+</dd>
+<dt class="hdlist1">-j &lt;n&gt;</dt>
+<dt class="hdlist1">--jobs &lt;n&gt;</dt>
+<dd>
+<p>The number of submodules fetched at the same time.
+Defaults to the <code>submodule.fetchJobs</code> option.</p>
+</dd>
+<dt class="hdlist1">&lt;repository&gt;</dt>
+<dd>
+<p>The (possibly remote) repository to clone from.  See the
+<a href="#URLS">URLS</a> section below for more information on specifying
+repositories.</p>
+</dd>
+<dt class="hdlist1">&lt;directory&gt;</dt>
+<dd>
+<p>The name of a new directory to clone into.  The "humanish"
+part of the source repository is used if no directory is
+explicitly given (<code>repo</code> for <code>/path/to/repo.git</code> and <code>foo</code>
+for <code>host.xz:foo/.git</code>).  Cloning into an existing directory
+is only allowed if the directory is empty.</p>
+</dd>
+</dl>
+</div></div>
+  
+</div>
+<div class="sect1">
+  <h2 id="_git_urls_a_id_urls_a">GIT URLS<a id="URLS"></a></h2>
+  
+    <div class="sectionbody"><div class="paragraph">
+<p>In general, URLs contain information about the transport protocol, the
+address of the remote server, and the path to the repository.
+Depending on the transport protocol, some of this information may be
+absent.</p>
+</div>
+<div class="paragraph">
+<p>Git supports ssh, git, http, and https protocols (in addition, ftp,
+and ftps can be used for fetching, but this is inefficient and
+deprecated; do not use it).</p>
+</div>
+<div class="paragraph">
+<p>The native transport (i.e. git:// URL) does no authentication and
+should be used with caution on unsecured networks.</p>
+</div>
+<div class="paragraph">
+<p>The following syntaxes may be used with them:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ssh://[user@]host.xz[:port]/path/to/repo.git/</p>
+</li>
+<li>
+<p>git://host.xz[:port]/path/to/repo.git/</p>
+</li>
+<li>
+<p>http[s]://host.xz[:port]/path/to/repo.git/</p>
+</li>
+<li>
+<p>ftp[s]://host.xz[:port]/path/to/repo.git/</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An alternative scp-like syntax may also be used with the ssh protocol:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>[user@]host.xz:path/to/repo.git/</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This syntax is only recognized if there are no slashes before the
+first colon. This helps differentiate a local path that contains a
+colon. For example the local path <code>foo:bar</code> could be specified as an
+absolute path or <code>./foo:bar</code> to avoid being misinterpreted as an ssh
+url.</p>
+</div>
+<div class="paragraph">
+<p>The ssh and git protocols additionally support ~username expansion:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ssh://[user@]host.xz[:port]/~[user]/path/to/repo.git/</p>
+</li>
+<li>
+<p>git://host.xz[:port]/~[user]/path/to/repo.git/</p>
+</li>
+<li>
+<p>[user@]host.xz:/~[user]/path/to/repo.git/</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For local repositories, also supported by Git natively, the following
+syntaxes may be used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>/path/to/repo.git/</p>
+</li>
+<li>
+<p>file:///path/to/repo.git/</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>These two syntaxes are mostly equivalent, except the former implies
+--local option.</p>
+</div>
+<div class="paragraph">
+<p>When Git doesn&#8217;t know how to handle a certain transport protocol, it
+attempts to use the <em>remote-&lt;transport&gt;</em> remote helper, if one
+exists. To explicitly request a remote helper, the following syntax
+may be used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;transport&gt;::&lt;address&gt;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>where &lt;address&gt; may be a path, a server and path, or an arbitrary
+URL-like string recognized by the specific remote helper being
+invoked. See <a href='/docs/gitremote-helpers'>gitremote-helpers[1]</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>If there are a large number of similarly-named remote repositories and
+you want to use a different format for them (such that the URLs you
+use will be rewritten into URLs that work), you can create a
+configuration section of the form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	[url "&lt;actual url base&gt;"]
+		insteadOf = &lt;other url base&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, with this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	[url "git://git.host.xz/"]
+		insteadOf = host.xz:/path/to/
+		insteadOf = work:</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>a URL like "work:repo.git" or like "host.xz:/path/to/repo.git" will be
+rewritten in any context that takes a URL to be "git://git.host.xz/repo.git".</p>
+</div>
+<div class="paragraph">
+<p>If you want to rewrite URLs for push only, you can create a
+configuration section of the form:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	[url "&lt;actual url base&gt;"]
+		pushInsteadOf = &lt;other url base&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example, with this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>	[url "ssh://example.org/"]
+		pushInsteadOf = git://example.org/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>a URL like "git://example.org/path/to/repo.git" will be rewritten to
+"ssh://example.org/path/to/repo.git" for pushes, but pulls will still
+use the original URL.</p>
+</div></div>
+  
+</div>
+<div class="sect1">
+  <h2 id="_examples">Examples</h2>
+  
+    <div class="sectionbody"><div class="ulist">
+<ul>
+<li>
+<p>Clone from upstream:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone git://git.kernel.org/pub/scm/.../linux.git my-linux
+$ cd my-linux
+$ make</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Make a local clone that borrows from the current directory, without checking things out:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone -l -s -n . ../copy
+$ cd ../copy
+$ git show-branch</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Clone from upstream while borrowing from an existing local directory:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone --reference /git/linux.git \
+	git://git.kernel.org/pub/scm/.../linux.git \
+	my-linux
+$ cd my-linux</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a bare repository to publish your changes to the public:</p>
+<div class="listingblock">
+<div class="content">
+<pre>$ git clone --bare -l /home/proj/.git /pub/scm/proj.git</pre>
+</div>
+</div>
+</li>
+</ul>
+</div></div>
+  
+</div>
+<div class="sect1">
+  <h2 id="_git">GIT</h2>
+  
+    <div class="sectionbody"><div class="paragraph">
+<p>Part of the <a href='/docs/git'>git[1]</a> suite</p>
+</div></div>
+  
+</div>
+  </div>
+
+        </div>
+      </div>
+      <footer>
+  <div class="site-source">
+    This <a href="https://github.com/git/git-scm.com/blob/master/README.md#license">open sourced</a> site is <a href="https://github.com/git/git-scm.com">hosted on GitHub.</a><br>
+    Patches, suggestions and comments are welcome.
+  </div>
+  <div class="sfc-member">
+    Git is a member of <a href="/sfc">Software Freedom Conservancy</a>
+  </div>
+</footer>
+
+<script src="/assets/jquery-1.7.1.min-ae4fcd0fbc7a69a0676014f3b0488876.js"></script>
+<script src="/assets/jquery-ui-1.8.18.custom.min-e26b28f4c867b7ddf80395d18c42afe3.js"></script>
+<script src="/assets/jquery.defaultvalue-fb4265b0e862acfce66a73a5131528b3.js"></script>
+<script src="/assets/session.min-84e4d7864bab5f4f7b2eafd9c1ebc0ca.js"></script>
+<script src="/assets/site-1dedb2e04243f2cda0b571c1ade66561.js"></script>
+
+    </div>
+
+</body>
+</html>
+≠TÅÜƒ       WmhìWmhï<ôú6       #:https://git-scm.com/docs/git-clone necko:classified 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Server: Cowboy
+Date: Fri, 24 Jun 2016 17:06:28 GMT
+Status: 200 OK
+x-frame-options: SAMEORIGIN
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 46276
+Etag: W/"2ef66a0cebde5396c48d7c15fdad72cb"
+Cache-Control: max-age=0, private, must-revalidate
+X-Request-Id: 1ebf0cdf-2215-41ad-9678-40bd5b3853a9
+X-Runtime: 0.305608
+Strict-Transport-Security: max-age=31536000
+Via: 1.1 vegur
+ charset UTF-8 uncompressed-len 0 predictor::resource-count 24 predictor::https://git-scm.com/assets/git-scm-65ca8280a031499ee9e8e2b10c8a596c.css 1,1,1466787987,0 predictor::https://git-scm.com/assets/modernizr-10d8d48497292341fc1c4a63d06c6f61.js 1,1,1466787987,0 predictor::https://git-scm.com/assets/modernizr-tests-0e26a9afd9c6455a99b7b4165485c366.js 1,1,1466787987,0 predictor::https://use.typekit.com/jsq2fql.js 1,1,1466787987,0 predictor::https://git-scm.com/images/logo@2x.png 1,1,1466787987,0 predictor::https://git-scm.com/images/icons/green-dot.png 1,1,1466787987,0 predictor::https://git-scm.com/images/icons/red-dot.png 1,1,1466787987,0 predictor::https://git-scm.com/images/icons/grey-dot.png 1,1,1466787987,0 predictor::https://git-scm.com/assets/jquery-1.7.1.min-ae4fcd0fbc7a69a0676014f3b0488876.js 1,1,1466787987,0 predictor::https://git-scm.com/assets/jquery-ui-1.8.18.custom.min-e26b28f4c867b7ddf80395d18c42afe3.js 1,1,1466787987,0 predictor::https://git-scm.com/assets/jquery.defaultvalue-fb4265b0e862acfce66a73a5131528b3.js 1,1,1466787987,0 predictor::https://git-scm.com/assets/session.min-84e4d7864bab5f4f7b2eafd9c1ebc0ca.js 1,1,1466787987,0 predictor::https://git-scm.com/assets/site-1dedb2e04243f2cda0b571c1ade66561.js 1,1,1466787987,0 predictor::https://git-scm.com/images/bg/body.jpg 1,1,1466787987,0 predictor::https://git-scm.com/images/icons/search.png 1,1,1466787987,0 predictor::https://git-scm.com/images/icons/code.png 1,1,1466787987,0 predictor::https://www.google.com/jsapi?callback=gloader_ready 1,1,1466787987,0 predictor::https://use.typekit.com/c/e52eaf/1w;adelle,2,XK9:W:n4,XKF:W:n7/d 1,1,1466787987,0 predictor::https://secure.gaug.es/track.js 1,1,1466787987,0 predictor::https://p.typekit.net/p.gif?s=1&k=jsq2fql&app=typekit&ht=tk&h=git-scm.com&f=2001.6862&a=520144&sl=212&fl=96&js=1.14.14&_=1466787988771 1,1,1466787987,0 predictor::https://ping.typekit.net/p.gif?s=1&k=jsq2fql&app=typekit&ht=tk&h=git-scm.com&f=2001.6862&a=520144&sl=212&fl=96&js=1.14.14&_=1466787988772 1,1,1466787987,0 predictor::https://secure.gaug.es/track.gif?h[site_id]=4f919d1df5a1f504b3000026&h[resource]=https%3A%2F%2Fgit-scm.com%2Fdocs%2Fgit-clone&h[referrer]=http%3A%2F%2Fr.search.yahoo.com%2F_ylt%3DA86.J3SOaG1X0T0AvXUnnIlQ%3B_ylu%3DX3oDMTE0bzM0Z2s3BGNvbG8DZ3ExBHBvcwMyBHZ0aWQDRkZVSTNDMV8xBHNlYwNzcg--%2FRV%3D2%2FRE%3D1466816782%2FRO%3D10%2FRU%3Dhttps%253a%252f%252fgit-scm.com%252fdocs%252fgit-clone%2FRK%3D0%2FRS%3D4idv_wIYOoUEBw6v8_X4.zd57Rw-&h[title]=Git%20-%20git-clone%20Documentation&h[user_agent]=Mozilla%2F5.0%20(X11%3B%20Linux%20x86_64%3B%20rv%3A38.0)%20Gecko%2F20100101%20Firefox%2F38.0&h[unique]=0&h[unique_hour]=0&h[unique_day]=0&h[unique_month]=0&h[unique_year]=0&h[screenx]=1366&h[browserx]=1366&h[browsery]=596&timestamp=1466787988843 1,1,1466787987,0 predictor::https://js-agent.newrelic.com/nr-952.min.js 1,1,1466787987,0 predictor::https://bam.nr-data.net/1/20c4a8c482?a=454369&v=952.3a19e93&to=dl5cQkcLXF9XRBoBW1YeX1db&rst=1566&ref=https://git-scm.com/docs/git-clone&qt=5&ap=305&be=702&fe=853&dc=506&perf=%7B%22timing%22:%7B%22of%22:1466787987527,%22n%22:0,%22f%22:0,%22dn%22:0,%22dne%22:83,%22c%22:83,%22ce%22:83,%22rq%22:242,%22rp%22:309,%22rpe%22:751,%22dl%22:680,%22di%22:1131,%22ds%22:1207,%22de%22:1218,%22dc%22:1554,%22l%22:1554,%22le%22:1555%7D,%22navigation%22:%7B%22ty%22:255%7D%7D&jsonp=NREUM.setToken 1,1,1466787987,0   ¥ƒ

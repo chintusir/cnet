@@ -1,0 +1,287 @@
+/* Common JS logic for all login/account pages */
+
+/*
+ * Common utility methods
+ */
+var Util = function() {
+	
+    this.syncAndRemoveCheckbox = function(checkbox, checkboxHidden) {
+    	if(checkbox && checkboxHidden){
+        	checkboxHidden.attr('value', checkbox.is(':checked') ? 'yes' : 'no');
+        	// push just hidden value and don't rely on checkbox input element
+        	checkbox.attr("disabled", true);
+    	}
+    };
+    
+    this.stringContains = function(string, substring){
+    	return string.indexOf(substring) > -1;
+    };
+    
+    this.getCookie = function(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0; i<ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1);
+            if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+        }
+        return "";
+    };
+
+    this.handleDownloadTexts = function(){
+    	// Download UI texts handling
+    	var hint = util.getCookie('rhd-reg-hint');
+    	// get info from cookie if we are in download flow to modify some texts
+    	if(hint.indexOf('fulluser') > -1 || hint.indexOf('companycountry') > -1){
+    		$('.download-hide').remove();
+    		$('.download-show').show();
+    	} else {
+    		$('.download-show').remove();
+    	}
+    };
+
+    
+    var modalActiveClass = "modal-active";
+    this.toggleModal = function(id) {
+        var modalWindow = $("#"+id);
+        var isModalActive = modalWindow.hasClass(modalActiveClass);
+        modalWindow.toggleClass("modal-active");
+        if (isModalActive) {
+            var popupMask = $("#PopupMask");
+            if (popupMask != null)  {
+                popupMask.remove();
+            }
+            modalWindow.css( "z-index" , $("#"+id).data('saveZindex') );
+        } else {
+            $("body").prepend("<div id='PopupMask' style='position:fixed;width:100%;height:100%;z-index:10;background-color:gray;'></div>");
+            $("#PopupMask").css('opacity', 0.7);
+            modalWindow.data('saveZindex', modalWindow.css( "z-index"));
+            modalWindow.css( "z-index" , 11);
+        }
+    };
+};
+util = new Util();
+
+/*
+ * Javascripts for validation of user Registration form (login/register.ftl).
+ * initValidation() must be called during page initialization.
+ */
+var Register = function () {
+    this.initValidation = function (regForm) {
+    	
+    	var validateConfig = {
+            submitHandler: function(form) {
+                util.syncAndRemoveCheckbox($('#user\\.attributes\\.newsletter'), $('#user\\.attributes\\.newsletter\\.hidden'));
+                form.submit();
+            },
+            rules: {
+                password: {required: true, minlength: 6},
+                "password-confirm": {required: true, equalTo: "#password" }
+            },
+            messages: {
+                password: {required: "Password is required"},
+                "password-confirm": { required: "Type in password again",  equalTo: "Passwords don't match" }
+            }
+        };
+    	
+    	setupRhdBasicUserValidations(validateConfig, true);
+
+        
+    	// terms handling
+    	setupRhdTCValidations(validateConfig, true, true);
+    	
+        regForm.validate(validateConfig);
+    }
+};
+register = new Register();
+
+/*
+ * Javascripts for validation of user account update form shown during login flows (login/login-update-profile.ftl).
+ * initValidation() must be called during page initialization.
+ */
+var Update = function () {
+    this.initValidation = function (regForm, isFirstSocialLoginFlow, enterPassword, enterUserProfile, enterRhdTac, enterAdditionalTac) {
+    	
+    	var validateConfig = {
+            submitHandler: function(form) {
+                util.syncAndRemoveCheckbox($('#user\\.attributes\\.newsletter'), $('#user\\.attributes\\.newsletter\\.hidden'));
+                form.submit();
+            },
+            rules: {
+            },
+            messages: {
+                "user.attributes.pwd": {required: "Password is required"},
+                "password-confirm": {required: "Type in password again", equalTo: "Passwords don't match"}
+            }
+        };
+    	
+    	if(enterUserProfile){
+    		setupRhdBasicUserValidations(validateConfig, !isFirstSocialLoginFlow);
+    	}
+
+    	if(enterPassword){
+		  validateConfig.rules["user.attributes.pwd"] = { required: true,  minlength: 6 };
+		  validateConfig.rules["password-confirm"] = { required: true, equalTo: "#user\\.attributes\\.pwd" };
+    	}
+        
+    	// terms handling
+    	setupRhdTCValidations(validateConfig, enterRhdTac, enterAdditionalTac);
+    	
+        regForm.validate(validateConfig);
+    }
+};
+update = new Update();
+
+/*
+ * Javascripts for validation of user profile form shown in account app (account/account.ftl).
+ * initValidation() must be called during page initialization.
+ */
+var Profile = function () {
+    this.initValidation = function (regForm) {
+    	
+    	var validateConfig = {
+            rules: {
+            },
+            messages: {
+            }
+        };
+    	
+  		setupRhdBasicUserValidations(validateConfig,true);
+
+        regForm.validate(validateConfig);
+    }
+};
+profile = new Profile();
+
+
+function setupRhdBasicUserValidations(validateConfig, emailRemoteVerification){
+	validateConfig.onkeyup = function(element) {
+		var element_id = $(element).attr('id');
+		if (this.settings.rules[element_id] && this.settings.rules[element_id].onkeyup !== false) {
+			$.validator.defaults.onkeyup.apply(this, arguments);
+		}
+	};
+    validateConfig.highlight = function( element, errorClass, validClass ) {
+        if ( element.type === "radio" ) {
+            this.findByName( element.name ).addClass( errorClass ).removeClass( validClass );
+            this.findByName( element.name ).parent().addClass( errorClass ).removeClass( validClass );
+        } else {
+            $( element ).addClass( errorClass ).removeClass( validClass );
+            $( element ).parent().addClass( errorClass ).removeClass( validClass );
+        }
+    };
+    validateConfig.unhighlight= function( element, errorClass, validClass ) {
+        if ( element.type === "radio" ) {
+            this.findByName( element.name ).removeClass( errorClass ).addClass( validClass );
+            this.findByName( element.name ).parent().removeClass( errorClass ).addClass( validClass );
+        } else {
+            $( element ).removeClass( errorClass ).addClass( validClass );
+            $( element ).parent().removeClass( errorClass ).addClass( validClass );
+        }
+    };
+
+	validateConfig.rules["email"] = {required: true, email: true, bannedCharsEmail:true};
+	if (emailRemoteVerification){
+		validateConfig.rules.email["onkeyup"] = false;
+		validateConfig.rules.email["remote"] = {
+	        url: "/auth/realms/rhd/rhdtools/emailUsed",
+	        type: "post",
+	        cache: false,
+	        contentType: "application/json",
+	        async: true,
+	        dataProcess: true,
+	        beforeSend: function(jqXHR, settings) {
+	            settings.data = JSON.stringify(
+	                {
+	                    email: $("#email").val(),
+	                    username: $("#email").attr("data-uname")
+	                }
+	            );
+	        },
+	        dataFilter: function(response) {
+	            return !$.parseJSON(response).exists;
+	        }
+	    };
+	} 
+    var loginUrl = $("#email").attr("data-login-url");
+	validateConfig.messages["email"] = {required: "Email is required", remote: "Email already exists. " + loginUrl};
+	validateConfig.rules["firstName"] = {required: true, maxlength: 45, bannedChars : true};
+	validateConfig.messages["firstName"] = {required: "First name is required"};
+	validateConfig.rules["lastName"] = {required: true, maxlength: 45, bannedChars : true};
+	validateConfig.messages["lastName"] = {required: "Last name is required"};
+	validateConfig.rules["user.attributes.company"] = {required: true, maxlength: 45, bannedChars : true};
+	validateConfig.messages["user.attributes.company"] = {required: "Company name is required"};
+	validateConfig.rules["user.attributes.country"] = {required: true, bannedChars : true};
+	validateConfig.messages["user.attributes.country"] = {required: "Country is required"};
+}
+
+
+function setupRhdTCValidations(validateConfig, enterRhdTac, enterAdditionalTac){
+	if(enterRhdTac){
+		validateConfig.rules["user.attributes.tcacc-1246"] = {required: true};
+		validateConfig.messages["user.attributes.tcacc-1246"] = {required: "You have to agree with Terms and Conditions"};
+	}
+	if(enterAdditionalTac){
+		validateConfig.rules["user.attributes.tcacc-6"] = {required: true};
+		validateConfig.messages["user.attributes.tcacc-6"] = {required: "You have to agree with Terms and Conditions"};
+		validateConfig.rules["user.attributes.tcacc-1010"] = {required: true};
+		validateConfig.messages["user.attributes.tcacc-1010"] = {required: "You have to agree with Terms and Conditions"};
+	}
+}
+
+/*
+ * Password update page javascripts (account/password.ftl).
+ * initPasswordValidation() must be called during page initialization.
+ */
+var Password = function () {
+    this.initPasswordValidation = function (regForm) {
+        regForm.validate({
+            rules: {
+                "password-new": {required: true, minlength: 6 },
+                "password-confirm": { required: true, equalTo: "#password-new"}
+            },
+            messages: {
+                "password-new": {
+                    required: "New password is required"
+                },
+                "password-confirm": {
+                    required: "Type in password again",
+                    equalTo: "Passwords don't match"
+                }
+            }
+        });
+    }
+
+};
+password = new Password();
+
+
+/*
+ * Additional validators
+ */
+jQuery.validator.addMethod("required", function(value, element) {
+    return $.trim(value);
+}, "This field is required");
+
+jQuery.validator.addMethod("phone", function(value, element) {
+	var re = new RegExp('^\\+?[0-9\\.\\- ]+$');
+    return re.test(value);
+}, "This field may only contain the following characters (0-9) (+) (-) (space) (.).");
+
+jQuery.validator.addMethod("bannedChars", function(value, element) {
+    return !(util.stringContains(value,"\"") || util.stringContains(value,"$") || util.stringContains(value,"^") || util.stringContains(value,"<") || util.stringContains(value,">") || util.stringContains(value,"|") || util.stringContains(value,"+") || util.stringContains(value,"%") || util.stringContains(value,"\\"));
+}, "This field cannot contain the following special characters (\") ($) (^) (<) (>) (|) (+) (%) (\\).");
+
+jQuery.validator.addMethod("bannedCharsEmail", function(value, element) {
+    return !(util.stringContains(value,"$") || util.stringContains(value,"^") || util.stringContains(value,"|") || util.stringContains(value,"%") || util.stringContains(value,"\\") || util.stringContains(value,"~") || util.stringContains(value,"*") || util.stringContains(value,"="));
+}, "Email field cannot contain the following special characters ($) (^) (|) (%) (\\) (~) (*) (=).");
+
+
+ïçuæK      Wm?qWm?r<·Í¢WîÃ   l:https://developers.redhat.com/auth/resources/1.9.8.final/login/redhat-developer/js/login-account.js?v=1.9.4 necko:classified 1 security-info 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 request-method GET response-head HTTP/1.1 200 OK
+Cache-Control: max-age=2592000
+X-Powered-By: Undertow/1
+Server: JBoss-EAP/7
+Content-Type: text/javascript
+Content-Length: 11003
+Date: Fri, 24 Jun 2016 14:09:07 GMT
+ uncompressed-len 0   *˚
